@@ -40,21 +40,21 @@ export function Board({ addResult }: BoardProps) {
   }
 
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      width={320}
-      marginTop={14}
-    >
-      <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        width={320}
+        marginTop={14}
+      >
         <ResultWidget result={resultNumber} />
         <ComparisonSelector control={control} />
         <NumberSlider control={control} />
         <Button type="submit" fullWidth variant="contained" color="secondary">
           PLAY
         </Button>
-      </form>
-    </Box>
+      </Box>
+    </form>
   );
 }
