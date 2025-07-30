@@ -10,7 +10,7 @@ import { Control, Controller } from "react-hook-form";
 import { BoardInputs } from "../../Board/types";
 
 interface ComparisonSelectorProps {
-  control: Control<BoardInputs, any, BoardInputs>;
+  control: Control<BoardInputs>;
 }
 
 export function ComparisonSelector({ control }: ComparisonSelectorProps) {

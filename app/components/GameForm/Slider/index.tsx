@@ -4,7 +4,7 @@ import { Control, Controller } from "react-hook-form";
 import { BoardInputs } from "../../Board/types";
 
 interface NumberSliderProps {
-  control: Control<BoardInputs, any, BoardInputs>;
+  control: Control<BoardInputs>;
 }
 
 export function NumberSlider({ control }: NumberSliderProps) {
