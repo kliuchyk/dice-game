@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} ${roboto.variable} antialiased`}>
+      <body className={`${roboto.variable} antialiased`}>
         <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
       </body>
     </html>
