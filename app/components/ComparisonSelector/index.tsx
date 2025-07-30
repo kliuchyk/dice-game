@@ -4,6 +4,7 @@ import {
   RadioGroup,
   FormControlLabel,
   Radio,
+  capitalize,
 } from "@mui/material";
 import { Control, Controller } from "react-hook-form";
 import { BoardInputs } from "../Board/types";
@@ -26,14 +27,14 @@ export function ComparisonSelector({ control }: ComparisonSelectorProps) {
             name="comparison"
           >
             <FormControlLabel
-              value="under"
+              value={COMPARISONS.under}
               control={<Radio color="secondary" />}
-              label="Under"
+              label={capitalize(COMPARISONS.under)}
             />
             <FormControlLabel
-              value="over"
+              value={COMPARISONS.over}
               control={<Radio color="secondary" />}
-              label="Over"
+              label={capitalize(COMPARISONS.over)}
             />
           </RadioGroup>
         )}

@@ -1,3 +1,4 @@
+import { PreviousResult } from "@/app/types";
 import {
   TableContainer,
   Paper,
@@ -7,21 +8,16 @@ import {
   TableCell,
   TableBody,
 } from "@mui/material";
+import { tableContainerStyles, tableStyles } from "./styles";
 
-function createData(time: string, guess: string, result: number) {
-  return { time, guess, result };
+interface PreviousResultsProps {
+  results: PreviousResult[];
 }
 
-const rows = [
-  createData("11:46:32", "Over 13", 24),
-  createData("11:46:32", "Under 23", 37),
-  createData("11:46:32", "Over 57", 24),
-];
-
-export function PreviousResults() {
+export function PreviousResults({ results }: PreviousResultsProps) {
   return (
-    <TableContainer sx={{ width: "600px", mt: "24px" }}>
-      <Table sx={{ minWidth: 650 }} aria-label="results table">
+    <TableContainer sx={tableContainerStyles}>
+      <Table aria-label="results table" sx={tableStyles}>
         <TableHead>
           <TableRow>
             <TableCell>Time</TableCell>
@@ -30,14 +26,13 @@ export function PreviousResults() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.time}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-            >
+          {results.map((row) => (
+            <TableRow key={`${row.time}-${row.result}`}>
               <TableCell>{row.time}</TableCell>
               <TableCell>{row.guess}</TableCell>
-              <TableCell>{row.result}</TableCell>
+              <TableCell sx={{ color: row.isCorrect ? "green" : "red" }}>
+                {row.result}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
