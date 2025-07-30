@@ -1,6 +1,7 @@
 import { Box, Button } from "@mui/material";
 import { NumberSlider } from "../Slider";
 import { ComparisonSelector } from "../ComparisonSelector";
+import { ResultWidget } from "../ResultWidget";
 
 export function Board() {
   return (
@@ -11,6 +12,7 @@ export function Board() {
       width={320}
       marginTop={14}
     >
+      <ResultWidget result={100} />
       <ComparisonSelector />
       <NumberSlider />
       <Button fullWidth variant="contained" color="secondary">
