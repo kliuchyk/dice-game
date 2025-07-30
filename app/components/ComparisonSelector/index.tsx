@@ -5,28 +5,39 @@ import {
   FormControlLabel,
   Radio,
 } from "@mui/material";
+import { Control, Controller } from "react-hook-form";
+import { BoardInputs } from "../Board/types";
 
-export function ComparisonSelector() {
+interface ComparisonSelectorProps {
+  control: Control<BoardInputs, any, BoardInputs>;
+}
+
+export function ComparisonSelector({ control }: ComparisonSelectorProps) {
   return (
     <FormControl>
-      <RadioGroup
-        row
-        aria-labelledby="dice-radio-buttons-group-label"
-        defaultValue={COMPARISONS.UNDER}
-        name="radio-buttons-group"
-        color="secondary"
-      >
-        <FormControlLabel
-          value={COMPARISONS.UNDER}
-          control={<Radio color="secondary" />}
-          label="Under"
-        />
-        <FormControlLabel
-          value={COMPARISONS.OVER}
-          control={<Radio color="secondary" />}
-          label="Over"
-        />
-      </RadioGroup>
+      <Controller
+        name="comparison"
+        control={control}
+        render={({ field }) => (
+          <RadioGroup
+            {...field}
+            row
+            aria-labelledby="comparison-label"
+            name="comparison"
+          >
+            <FormControlLabel
+              value="under"
+              control={<Radio color="secondary" />}
+              label="Under"
+            />
+            <FormControlLabel
+              value="over"
+              control={<Radio color="secondary" />}
+              label="Over"
+            />
+          </RadioGroup>
+        )}
+      />
     </FormControl>
   );
 }

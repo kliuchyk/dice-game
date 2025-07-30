@@ -1,4 +1,4 @@
-export const COMPARISONS = {
-  UNDER: "under",
-  OVER: "over",
-};
+export const COMPARISONS: Record<string, string> = {
+  under: "under",
+  over: "over",
+} as const;
