@@ -6,7 +6,7 @@ export function NumberSlider() {
     <Slider
       sx={{ mt: 4, mb: 4 }}
       size="small"
-      min={1}
+      min={0}
       max={100}
       defaultValue={10}
       aria-label="Small"
