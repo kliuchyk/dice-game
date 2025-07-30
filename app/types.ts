@@ -4,3 +4,5 @@ export interface PreviousResult {
   result: number;
   isCorrect: boolean;
 }
+
+export type AlertType = "success" | "error";
