@@ -5,6 +5,7 @@ import { Board } from "../Board";
 import { PreviousResults } from "../PreviousResults";
 import { useState } from "react";
 import { PreviousResult } from "@/app/types";
+import { limitResults } from "./utils";
 
 export function DiceGame() {
   const [results, setResults] = useState<PreviousResult[]>([]);
@@ -12,7 +13,7 @@ export function DiceGame() {
   function addResult(newResult: PreviousResult) {
     setResults((prevResults) => {
       const updatedResults = [newResult, ...prevResults];
-      return updatedResults.slice(0, 10);
+      return limitResults(updatedResults);
     });
   }
 

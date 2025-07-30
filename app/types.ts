@@ -6,3 +6,8 @@ export interface PreviousResult {
 }
 
 export type AlertType = "success" | "error";
+
+export interface AlertInfo {
+  type: AlertType;
+  comparison?: string;
+}

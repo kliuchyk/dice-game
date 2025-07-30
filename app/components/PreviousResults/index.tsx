@@ -1,7 +1,6 @@
 import { PreviousResult } from "@/app/types";
 import {
   TableContainer,
-  Paper,
   Table,
   TableHead,
   TableRow,
