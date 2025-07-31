@@ -31,7 +31,7 @@ export function GameForm({
       (comparison === COMPARISONS.under && number > generated) ||
       (comparison === COMPARISONS.over && number < generated);
     const comparisonText =
-      comparison === COMPARISONS.under ? COMPARISONS.under : COMPARISONS.over;
+      comparison === COMPARISONS.under ? COMPARISONS.over : COMPARISONS.under;
 
     setResultNumber(generated);
 
